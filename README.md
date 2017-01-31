@@ -21,24 +21,43 @@ include 'src/Client.php';
 
 ## Functions
 
-For all parsers there is a single function, the static `search` function is:
+For all parsers there are a few functions...
+
+The static `search` function:
 ```php
 <?php
 use \pxgamer\TorrentParser;
 TorrentParser\*CLIENT*::search('Search Query');
 ```
 
+The static `latest` function:
+```php
+<?php
+use \pxgamer\TorrentParser;
+TorrentParser\*CLIENT*::latest();
+```
+
 All parameters are returned as an array of objects.
 
 ## Examples
 
-__ExtraTorrent__
+### ExtraTorrent
+
+_Search_
 ```php
 <?php
 use \pxgamer\TorrentParser;
 TorrentParser\ExtraTorrent::search('Search Query');
 ```
-Returned Data:
+
+_Latest_
+```php
+<?php
+use \pxgamer\TorrentParser;
+TorrentParser\ExtraTorrent::latest();
+```
+
+_Example Returned Data_
 ```php
 (
     [0] => Array
@@ -59,13 +78,23 @@ Returned Data:
 )
 ```
 
-__WorldWideTorrents__
+### WorldWide Torrents
+
+_Search_
 ```php
 <?php
 use \pxgamer\TorrentParser;
 TorrentParser\WorldWideTorrents::search('Search Query');
 ```
-Returned Data:
+
+_Latest_
+```php
+<?php
+use \pxgamer\TorrentParser;
+TorrentParser\WorldWideTorrents::latest();
+```
+
+_Example Returned Data_
 ```php
 (
     [0] => Array
