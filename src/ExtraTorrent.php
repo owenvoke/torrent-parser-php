@@ -13,6 +13,11 @@ class ExtraTorrent
         return self::get('/rss.xml?type=search&search='.$search_query);
     }
 
+    public static function latest()
+    {
+        return self::get('/rss.xml');
+    }
+
     private static function get($endpoint = '/rss.xml')
     {
         $cu = curl_init();
@@ -26,6 +31,7 @@ class ExtraTorrent
             ]
         );
         $response = curl_exec($cu);
+        $response = str_replace('&nbsp;', ' ', $response);
         $xml = simplexml_load_string($response);
 
         return self::xml2array($xml)['channel'][0]['item'];

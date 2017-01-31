@@ -13,6 +13,11 @@ class WorldWideTorrents
         return self::get('/json.php?dllink=1&q='.$search_query);
     }
 
+    public static function latest()
+    {
+        return self::get('/json.php');
+    }
+
     private static function get($endpoint = '/rss.xml')
     {
         $cu = curl_init();
