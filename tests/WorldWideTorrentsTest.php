@@ -15,4 +15,10 @@ class WorldWideTorrentsTest extends PHPUnit_Framework_TestCase
         $response = WorldWideTorrents::latest();
         $this->assertTrue(is_array($response));
     }
+
+    public function testWorldWideTorrentsUser()
+    {
+        $response = WorldWideTorrents::user('wasted');
+        $this->assertTrue(is_array($response));
+    }
 }

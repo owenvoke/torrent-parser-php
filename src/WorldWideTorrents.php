@@ -18,6 +18,13 @@ class WorldWideTorrents
         return self::get('/json.php');
     }
 
+    public static function user($username)
+    {
+        $username = urlencode($username);
+		
+        return self::get('/json.php?username='.$username);
+    }
+
     private static function get($endpoint = '/rss.xml')
     {
         $cu = curl_init();

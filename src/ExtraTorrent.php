@@ -18,6 +18,13 @@ class ExtraTorrent
         return self::get('/rss.xml');
     }
 
+    public static function user($username)
+    {
+        $username = urlencode($username);
+		
+        return self::get('/rss.xml?type=user&user='.$username);
+    }
+
     private static function get($endpoint = '/rss.xml')
     {
         $cu = curl_init();

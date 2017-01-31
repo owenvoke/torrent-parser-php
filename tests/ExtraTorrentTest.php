@@ -15,4 +15,10 @@ class ExtraTorrentTest extends PHPUnit_Framework_TestCase
         $response = ExtraTorrent::latest();
         $this->assertTrue(is_array($response));
     }
+
+    public function testExtraTorrentUser()
+    {
+        $response = ExtraTorrent::user('condors');
+        $this->assertTrue(is_array($response));
+    }
 }
