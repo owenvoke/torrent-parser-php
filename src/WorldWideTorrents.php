@@ -1,0 +1,32 @@
+<?php
+
+namespace pxgamer\TorrentParser;
+
+class WorldWideTorrents
+{
+    const BASE_URL = 'https://worldwidetorrents.eu';
+
+    public static function search($search_query)
+    {
+        $search_query = urlencode($search_query);
+
+        return self::get('/json.php?dllink=1&q='.$search_query);
+    }
+
+    private static function get($endpoint = '/rss.xml')
+    {
+        $cu = curl_init();
+        curl_setopt_array(
+            $cu,
+            [
+                CURLOPT_URL => self::BASE_URL.$endpoint,
+                CURLOPT_SSL_VERIFYPEER => 0,
+                CURLOPT_SSL_VERIFYHOST => 0,
+                CURLOPT_RETURNTRANSFER => 1,
+            ]
+        );
+        $response = curl_exec($cu);
+
+        return json_decode($response, true);
+    }
+}
