@@ -57,6 +57,13 @@ use \pxgamer\TorrentParser;
 TorrentParser\ExtraTorrent::latest();
 ```
 
+_User_
+```php
+<?php
+use \pxgamer\TorrentParser;
+TorrentParser\ExtraTorrent::user('username');
+```
+
 _Example Returned Data_
 ```php
 (
@@ -92,6 +99,13 @@ _Latest_
 <?php
 use \pxgamer\TorrentParser;
 TorrentParser\WorldWideTorrents::latest();
+```
+
+_User_
+```php
+<?php
+use \pxgamer\TorrentParser;
+TorrentParser\WorldWideTorrents::user('username');
 ```
 
 _Example Returned Data_
