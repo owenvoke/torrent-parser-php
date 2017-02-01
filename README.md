@@ -8,6 +8,7 @@ A collection of parsers for various torrent RSS/JSON feeds.
 - [WorldWide Torrents](src/WorldWideTorrents.php)
 - [MiniNova](src/MiniNova.php)
 - [RARBG](src/RARBG.php)
+- [EZTV](src/EZTV.php)
 
 ## Usage
 
@@ -202,6 +203,32 @@ _Example Returned Data_
             [link] => magnet:?xt=urn:btih:14eb628b0b5e651c4d40dab01dd7614a09ff4aae
             [guid] => magnet:?xt=urn:btih:14eb628b0b5e651c4d40dab01dd7614a09ff4aae
             [pubDate] => Wed, 01 Feb 2017 09:59:50 +0100
+        )
+)
+```
+
+### EZTV
+
+*__NOTE:__ EZTV only supports the `::latest()` function.*
+
+_Latest_
+```php
+<?php
+use \pxgamer\TorrentParser;
+TorrentParser\EZTV::latest();
+```
+
+_Example Returned Data_
+```php
+(
+    [0] => Array
+        (
+            [title] => Switched at Birth S05E01 HDTV x264-FLEET
+            [category] => TV
+            [link] => https://eztv.ag/ep/189266/switched-at-birth-s05e01-hdtv-x264-fleet/
+            [guid] => https://eztv.ag/ep/189266/switched-at-birth-s05e01-hdtv-x264-fleet/
+            [pubDate] => Tue, 31 Jan 2017 22:03:02 -0500
+            [enclosure] =>
         )
 )
 ```
