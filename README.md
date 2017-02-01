@@ -2,6 +2,13 @@
 
 A collection of parsers for various torrent RSS/JSON feeds.
 
+## Currently Supported Feeds
+
+- [ExtraTorrent](src/ExtraTorrent.php)
+- [WorldWide Torrents](src/WorldWideTorrents.php)
+- [MiniNova](src/MiniNova.php)
+- [RARBG](src/RARBG.php)
+
 ## Usage
 
 __Include the class:__
@@ -21,7 +28,7 @@ include 'src/Client.php';
 
 ## Functions
 
-For all parsers there are a few functions...
+For the parsers there are a few functions...
 
 The static `search` function:
 ```php
@@ -35,6 +42,13 @@ The static `latest` function:
 <?php
 use \pxgamer\TorrentParser;
 TorrentParser\*CLIENT*::latest();
+```
+
+The static `user` function:
+```php
+<?php
+use \pxgamer\TorrentParser;
+TorrentParser\*CLIENT*::user('username');
 ```
 
 All parameters are returned as an array of objects.
@@ -163,6 +177,31 @@ _Example Returned Data_
             [link] => http://www.mininova.org/tor/13358750
             [enclosure] =>
             [description] => ...
+        )
+)
+```
+
+### RARBG
+
+*__NOTE:__ RARBG only supports the `::latest()` function.*
+
+_Latest_
+```php
+<?php
+use \pxgamer\TorrentParser;
+TorrentParser\RARBG::latest();
+```
+
+_Example Returned Data_
+```php
+(
+    [0] => Array
+        (
+            [title] => LaNovice.17.02.01.Tania.Kiss.FRENCH.XXX.1080p.MP4-KTR
+            [description] => ...
+            [link] => magnet:?xt=urn:btih:14eb628b0b5e651c4d40dab01dd7614a09ff4aae
+            [guid] => magnet:?xt=urn:btih:14eb628b0b5e651c4d40dab01dd7614a09ff4aae
+            [pubDate] => Wed, 01 Feb 2017 09:59:50 +0100
         )
 )
 ```
