@@ -127,3 +127,42 @@ _Example Returned Data_
         )
 )
 ```
+
+### MiniNova
+
+_Search_
+```php
+<?php
+use \pxgamer\TorrentParser;
+TorrentParser\MiniNova::search('Search Query');
+```
+
+_Latest_
+```php
+<?php
+use \pxgamer\TorrentParser;
+TorrentParser\MiniNova::latest();
+```
+
+_User_
+```php
+<?php
+use \pxgamer\TorrentParser;
+TorrentParser\MiniNova::user('username');
+```
+
+_Example Returned Data_
+```php
+(
+    [0] => Array
+        (
+            [title] => Searchquest Pimp Game Free Download - - - - - - - - - - - - - - - - - -.zipSearchquest Pimp Game Fre
+            [guid] => http://www.mininova.org/tor/13358750
+            [pubDate] => Thu, 22 Sep 2016 13:32:10 +0200
+            [category] => Games
+            [link] => http://www.mininova.org/tor/13358750
+            [enclosure] =>
+            [description] => ...
+        )
+)
+```

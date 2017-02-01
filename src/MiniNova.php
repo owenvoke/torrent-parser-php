@@ -2,15 +2,15 @@
 
 namespace pxgamer\TorrentParser;
 
-class ExtraTorrent
+class MiniNova
 {
-    const BASE_URL = 'https://extra.to';
+    const BASE_URL = 'http://www.mininova.org';
 
     public static function search($search_query)
     {
         $search_query = urlencode($search_query);
 
-        return self::get('/rss.xml?type=search&search='.$search_query);
+        return self::get('/rss/'.$search_query);
     }
 
     public static function latest()
@@ -22,7 +22,7 @@ class ExtraTorrent
     {
         $username = urlencode($username);
 
-        return self::get('/rss.xml?type=user&user='.$username);
+        return self::get('/rss.xml?user='.$username);
     }
 
     private static function get($endpoint = '/rss.xml')

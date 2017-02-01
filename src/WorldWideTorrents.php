@@ -21,11 +21,11 @@ class WorldWideTorrents
     public static function user($username)
     {
         $username = urlencode($username);
-		
+
         return self::get('/json.php?username='.$username);
     }
 
-    private static function get($endpoint = '/rss.xml')
+    private static function get($endpoint = '/json.php')
     {
         $cu = curl_init();
         curl_setopt_array(
