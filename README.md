@@ -232,3 +232,29 @@ _Example Returned Data_
         )
 )
 ```
+
+### KatCR
+
+*__NOTE:__ KatCR only supports the `::latest()` function.*
+
+_Latest_
+```php
+<?php
+use \pxgamer\TorrentParser;
+TorrentParser\KatCR::latest();
+```
+
+_Example Returned Data_
+```php
+(
+    [0] => Array
+        (
+            [title] => MySistersHotFriend - Aubrey Sinclair 02 02 17
+            [guid] => https://katcr.co/new/download.php?id=29373
+            [link] => https://katcr.co/new/download.php?id=29373
+            [pubDate] => Thu, 02 Feb 2017 09:47:19 +0000
+            [category] =>  XXX: Videos
+            [description] => Category: XXX: Videos  Size: 329.91 MB Added: 2017-02-02 09:47:19 Seeders: 8 Leechers: 0
+        )
+)
+```
