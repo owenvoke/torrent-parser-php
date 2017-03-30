@@ -48,12 +48,14 @@ class ExtraTorrent
     {
         $arr = array();
 
-        foreach ($xml->children() as $r) {
-            $t = array();
-            if (count($r->children()) == 0) {
-                $arr[$r->getName()] = strval($r);
-            } else {
-                $arr[$r->getName()][] = self::xml2array($r);
+        if ($xml) {
+            foreach ($xml->children() as $r) {
+                $t = array();
+                if (!is_null($r) && count($r->children()) == 0) {
+                    $arr[$r->getName()] = strval($r);
+                } else {
+                    $arr[$r->getName()][] = self::xml2array($r);
+                }
             }
         }
 
