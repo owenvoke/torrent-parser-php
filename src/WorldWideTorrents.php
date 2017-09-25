@@ -4,7 +4,7 @@ namespace pxgamer\TorrentParser;
 
 class WorldWideTorrents
 {
-    const BASE_URL = 'https://worldwidetorrents.eu';
+    const BASE_URL = 'https://worldwidetorrents.me';
 
     public static function search($search_query)
     {
