@@ -1,9 +1,16 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
 use pxgamer\TorrentParser\RARBG;
 
-class RARBGTest extends PHPUnit_Framework_TestCase
+/**
+ * Class RARBGTest
+ */
+class RARBGTest extends TestCase
 {
+    /**
+     * Test for collecting the latest torrents from RARBG
+     */
     public function testRarbgLatest()
     {
         $response = RARBG::latest();

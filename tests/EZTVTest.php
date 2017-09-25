@@ -1,9 +1,16 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
 use pxgamer\TorrentParser\EZTV;
 
-class EZTVTest extends PHPUnit_Framework_TestCase
+/**
+ * Class EZTVTest
+ */
+class EZTVTest extends TestCase
 {
+    /**
+     * Test for collecting the latest torrents from EZTV
+     */
     public function testEztvLatest()
     {
         $response = EZTV::latest();
