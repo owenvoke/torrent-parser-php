@@ -40,6 +40,7 @@ class RARBG
                 CURLOPT_SSL_VERIFYPEER => 0,
                 CURLOPT_SSL_VERIFYHOST => 0,
                 CURLOPT_RETURNTRANSFER => 1,
+                CURLOPT_USERAGENT => 'Torrent Parser PHP'
             ]
         );
         $response = curl_exec($cu);

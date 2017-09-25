@@ -9,7 +9,7 @@ A collection of parsers for various torrent RSS/JSON feeds.
 - [~~MiniNova~~](src/MiniNova.php) (Deprecated)
 - [RARBG](src/RARBG.php)
 - [EZTV](src/EZTV.php)
-- [KatCR](src/KatCR.php)
+- [~~KatCR~~](src/KatCR.php)
 
 ## Usage
 
