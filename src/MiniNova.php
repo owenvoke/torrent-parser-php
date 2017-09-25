@@ -2,8 +2,12 @@
 
 namespace pxgamer\TorrentParser;
 
+use pxgamer\TorrentParser\Traits\Parser;
+
 class MiniNova
 {
+    use Parser;
+
     const BASE_URL = 'http://www.mininova.org';
 
     public static function search($search_query)
@@ -42,21 +46,5 @@ class MiniNova
         $xml = simplexml_load_string($response);
 
         return self::xml2array($xml)['channel'][0]['item'];
-    }
-
-    private static function xml2array($xml)
-    {
-        $arr = array();
-
-        foreach ($xml->children() as $r) {
-            $t = array();
-            if (count($r->children()) == 0) {
-                $arr[$r->getName()] = strval($r);
-            } else {
-                $arr[$r->getName()][] = self::xml2array($r);
-            }
-        }
-
-        return $arr;
     }
 }

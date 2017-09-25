@@ -10,7 +10,7 @@ class WorldWideTorrents
     {
         $search_query = urlencode($search_query);
 
-        return self::get('/json.php?dllink=1&q='.$search_query);
+        return self::get('/json.php?dllink=1&q=' . $search_query);
     }
 
     public static function latest()
@@ -22,7 +22,7 @@ class WorldWideTorrents
     {
         $username = urlencode($username);
 
-        return self::get('/json.php?username='.$username);
+        return self::get('/json.php?username=' . $username);
     }
 
     private static function get($endpoint = '/json.php')
@@ -31,7 +31,7 @@ class WorldWideTorrents
         curl_setopt_array(
             $cu,
             [
-                CURLOPT_URL => self::BASE_URL.$endpoint,
+                CURLOPT_URL            => self::BASE_URL . $endpoint,
                 CURLOPT_SSL_VERIFYPEER => 0,
                 CURLOPT_SSL_VERIFYHOST => 0,
                 CURLOPT_RETURNTRANSFER => 1,
