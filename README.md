@@ -4,9 +4,9 @@ A collection of parsers for various torrent RSS/JSON feeds.
 
 ## Currently Supported Feeds
 
-- [ExtraTorrent](src/ExtraTorrent.php)
+- [~~ExtraTorrent~~](src/ExtraTorrent.php) (Deprecated)
 - [WorldWide Torrents](src/WorldWideTorrents.php)
-- [MiniNova](src/MiniNova.php)
+- [~~MiniNova~~](src/MiniNova.php) (Deprecated)
 - [RARBG](src/RARBG.php)
 - [EZTV](src/EZTV.php)
 - [KatCR](src/KatCR.php)

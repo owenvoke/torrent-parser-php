@@ -1,28 +1,14 @@
 {
   "name": "pxgamer/torrent-parser-php",
-  "type": "library",
   "description": "A collection of parsers for various torrent RSS/JSON feeds.",
-  "homepage": "https://github.com/PXgamer/trello-php",
+  "type": "library",
   "license": "MIT",
-  "authors": [
-    {
-      "name": "PXgamer",
-      "email": "owzie123@gmail.com",
-      "role": "Developer"
-    }
-  ],
-  "support": {
-    "issues": "https://github.com/PXgamer/torrent-parser-php/issues"
-  },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/PXgamer/torrent-parser-php"
-    }
-  ],
   "require": {
-    "php": ">=5.5.0",
+    "php": ">=7.0.0",
     "ext-curl": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.3.1"
   },
   "autoload": {
     "psr-4": {
