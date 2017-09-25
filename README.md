@@ -2,6 +2,10 @@
 
 A collection of parsers for various torrent RSS/JSON feeds.
 
+[![Build Status](https://travis-ci.org/pxgamer/torrent-parser-php.svg?branch=master)](https://travis-ci.org/pxgamer/torrent-parser-php)
+[![Version](https://img.shields.io/packagist/v/pxgamer/torrent-parser-php.svg)](https://packagist.org/p/pxgamer/torrent-parser-php)
+[![License](https://img.shields.io/packagist/l/pxgamer/torrent-parser-php.svg)](https://opensource.org/licenses/mit-license)
+
 ## Currently Supported Feeds
 
 - [~~ExtraTorrent~~](src/ExtraTorrent.php) (Deprecated)
