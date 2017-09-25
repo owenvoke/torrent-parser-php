@@ -8,7 +8,7 @@ use pxgamer\TorrentParser\Traits\Parser;
  * Class MiniNova
  * @package pxgamer\TorrentParser
  *
- * @deprecated 1.1.0 MiniNova was shut down on April 4th, 2017.
+ * @deprecated 2.0.0 MiniNova was shut down on April 4th, 2017.
  */
 class MiniNova
 {

@@ -1,24 +1,7 @@
 <?php
 
-use pxgamer\TorrentParser\MiniNova;
+use PHPUnit\Framework\TestCase;
 
-class MiniNovaTest extends PHPUnit_Framework_TestCase
+class MiniNovaTest extends TestCase
 {
-    public function testMiniNovaSearch()
-    {
-        $response = MiniNova::search('Search');
-        $this->assertTrue(is_array($response));
-    }
-
-    public function testMiniNovaLatest()
-    {
-        $response = MiniNova::latest();
-        $this->assertTrue(is_array($response));
-    }
-
-    public function testMiniNovaUser()
-    {
-        $response = MiniNova::user('thefetch');
-        $this->assertTrue(is_array($response));
-    }
 }
