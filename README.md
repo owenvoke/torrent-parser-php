@@ -6,6 +6,8 @@ A collection of parsers for various torrent RSS/JSON feeds.
 [![Version](https://img.shields.io/packagist/v/pxgamer/torrent-parser-php.svg)](https://packagist.org/p/pxgamer/torrent-parser-php)
 [![License](https://img.shields.io/packagist/l/pxgamer/torrent-parser-php.svg)](https://opensource.org/licenses/mit-license)
 
+All parameters are returned as a [Collection](https://github.com/tightenco/collect) of [`Torrent`](src/Torrent.php) instances.
+
 ## Currently Supported Feeds
 
 - [~~ExtraTorrent~~](src/ExtraTorrent.php) (Deprecated)
@@ -24,12 +26,6 @@ __Include the class:__
 ```php
 <?php
 require 'vendor/autoload.php';
-```
-
-#### Including the file manually  
-```php
-<?php
-include 'src/Client.php';
 ```
 
 ## Functions
@@ -57,8 +53,6 @@ use \pxgamer\TorrentParser;
 TorrentParser\*CLIENT*::user('username');
 ```
 
-All parameters are returned as an array of objects.
-
 ## Examples
 
 ### WorldWide Torrents
@@ -84,26 +78,6 @@ use \pxgamer\TorrentParser;
 TorrentParser\WorldWideTorrents::user('username');
 ```
 
-_Example Returned Data_
-```php
-(
-    [0] => Array
-        (
-            [id] => 13498
-            [guid] => 13498
-            [title] => Educational Research: Competencies for Analysis and Applications (11th Global Edition) by Geoffrey E. Mills [Dr.Soc]
-            [category] => Books > Textbooks
-            [publish_date] => Sat, 10 Sep 2016 04:41:40 +0100
-            [size] => 42.05 MB
-            [seeders] => 105
-            [leechers] => 30
-            [info_hash] => 460418187943c439d37365a7e78e773e3fba3871
-            [link] => https://worldwidetorrents.eu/download.php?id=13498
-            [magnet] => magnet:?xt=urn:btih:460418187943c439d37365a7e78e773e3fba3871
-        )
-)
-```
-
 ### RARBG
 
 *__NOTE:__ RARBG only supports the `::latest()` function.*
@@ -115,20 +89,6 @@ use \pxgamer\TorrentParser;
 TorrentParser\RARBG::latest();
 ```
 
-_Example Returned Data_
-```php
-(
-    [0] => Array
-        (
-            [title] => LaNovice.17.02.01.Tania.Kiss.FRENCH.XXX.1080p.MP4-KTR
-            [description] => ...
-            [link] => magnet:?xt=urn:btih:14eb628b0b5e651c4d40dab01dd7614a09ff4aae
-            [guid] => magnet:?xt=urn:btih:14eb628b0b5e651c4d40dab01dd7614a09ff4aae
-            [pubDate] => Wed, 01 Feb 2017 09:59:50 +0100
-        )
-)
-```
-
 ### EZTV
 
 *__NOTE:__ EZTV only supports the `::latest()` function.*
@@ -138,21 +98,6 @@ _Latest_
 <?php
 use \pxgamer\TorrentParser;
 TorrentParser\EZTV::latest();
-```
-
-_Example Returned Data_
-```php
-(
-    [0] => Array
-        (
-            [title] => Switched at Birth S05E01 HDTV x264-FLEET
-            [category] => TV
-            [link] => https://eztv.ag/ep/189266/switched-at-birth-s05e01-hdtv-x264-fleet/
-            [guid] => https://eztv.ag/ep/189266/switched-at-birth-s05e01-hdtv-x264-fleet/
-            [pubDate] => Tue, 31 Jan 2017 22:03:02 -0500
-            [enclosure] =>
-        )
-)
 ```
 
 
