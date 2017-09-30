@@ -19,38 +19,11 @@ All parameters are returned as a [Collection](https://github.com/tightenco/colle
 
 ## Usage
 
-__Include the class:__
-
 #### Using Composer  
 `composer require pxgamer/torrent-parser-php`  
 ```php
 <?php
 require 'vendor/autoload.php';
-```
-
-## Functions
-
-For the parsers there are a few functions...
-
-The static `search` function:
-```php
-<?php
-use \pxgamer\TorrentParser;
-TorrentParser\*CLIENT*::search('Search Query');
-```
-
-The static `latest` function:
-```php
-<?php
-use \pxgamer\TorrentParser;
-TorrentParser\*CLIENT*::latest();
-```
-
-The static `user` function:
-```php
-<?php
-use \pxgamer\TorrentParser;
-TorrentParser\*CLIENT*::user('username');
 ```
 
 ## Examples
@@ -99,10 +72,3 @@ _Latest_
 use \pxgamer\TorrentParser;
 TorrentParser\EZTV::latest();
 ```
-
-
-**~~ExtraTorrent~~** (Deprecated)
-
-**~~KatCR~~** (Deprecated)
-
-**~~MiniNova~~** (Deprecated)
