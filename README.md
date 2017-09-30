@@ -10,12 +10,9 @@ All parameters are returned as a [Collection](https://github.com/tightenco/colle
 
 ## Currently Supported Feeds
 
-- [~~ExtraTorrent~~](src/ExtraTorrent.php) (Deprecated)
 - [WorldWide Torrents](src/WorldWideTorrents.php)
-- [~~MiniNova~~](src/MiniNova.php) (Deprecated)
 - [RARBG](src/RARBG.php)
 - [EZTV](src/EZTV.php)
-- [~~KatCR~~](src/KatCR.php) (Deprecated)
 
 ## Usage
 
