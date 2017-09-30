@@ -2,6 +2,7 @@
 
 namespace pxgamer\TorrentParser;
 
+use Illuminate\Support\Collection;
 use pxgamer\TorrentParser\Traits\Parser;
 
 /**
@@ -21,32 +22,35 @@ class RARBG
      */
     public static function latest()
     {
-        return self::get('/rssdd_magnet.php');
+        $data = self::get(self::BASE_URL . '/rssdd.php');
+
+        return self::createCollection($data);
     }
 
     /**
-     * Perform a GET request
+     * Create a new Collection of Torrent instances
      *
-     * @param string $endpoint
-     * @return mixed
+     * @param array $responseData
+     * @return Collection
      */
-    private static function get($endpoint = '/rssdd_magnet.php')
+    private static function createCollection($responseData)
     {
-        $cu = curl_init();
-        curl_setopt_array(
-            $cu,
-            [
-                CURLOPT_URL => self::BASE_URL.$endpoint,
-                CURLOPT_SSL_VERIFYPEER => 0,
-                CURLOPT_SSL_VERIFYHOST => 0,
-                CURLOPT_RETURNTRANSFER => 1,
-                CURLOPT_USERAGENT => 'Torrent Parser PHP'
-            ]
-        );
-        $response = curl_exec($cu);
-        $response = str_replace('&nbsp;', ' ', $response);
-        $xml = simplexml_load_string($response);
+        $collection = new Collection();
 
-        return self::xml2array($xml)['channel'][0]['item'];
+        foreach ($responseData as $element) {
+            $torrent = new Torrent();
+
+            $torrent->title = $element['title'] ?? null;
+            $torrent->link = $element['link'] ?? null;
+            $torrent->date = $element['pubDate'] ?? null;
+
+            if ($torrent->date) {
+                $torrent->date = new \DateTime($torrent->date);
+            }
+
+            $collection[] = $torrent;
+        }
+
+        return $collection;
     }
 }
