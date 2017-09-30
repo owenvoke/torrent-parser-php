@@ -36,6 +36,7 @@ class EZTV
     private static function createCollection($responseData)
     {
         $collection = new Collection();
+
         foreach ($responseData as $element) {
             $torrent = new Torrent();
 
