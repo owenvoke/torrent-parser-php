@@ -20,7 +20,7 @@ class WorldWideTorrents
     {
         $search_query = urlencode($search_query);
 
-        return self::get('/json.php?dllink=1&q=' . $search_query);
+        return self::get(self::BASE_URL . '/json.php?dllink=1&q=' . $search_query);
     }
 
     /**
@@ -30,7 +30,7 @@ class WorldWideTorrents
      */
     public static function latest()
     {
-        return self::get('/json.php');
+        return self::get(self::BASE_URL . '/json.php');
     }
 
     /**
@@ -43,25 +43,27 @@ class WorldWideTorrents
     {
         $username = urlencode($username);
 
-        return self::get('/json.php?username=' . $username);
+        return self::get(self::BASE_URL . '/json.php?username=' . $username);
     }
 
     /**
      * Perform a GET request
      *
-     * @param string $endpoint
+     * @param string $url
      * @return mixed
      */
-    private static function get($endpoint = '/json.php')
+    private static function get(string $url)
     {
         $cu = curl_init();
         curl_setopt_array(
             $cu,
             [
-                CURLOPT_URL            => self::BASE_URL . $endpoint,
+                CURLOPT_URL            => $url,
                 CURLOPT_SSL_VERIFYPEER => 0,
                 CURLOPT_SSL_VERIFYHOST => 0,
                 CURLOPT_RETURNTRANSFER => 1,
+                CURLOPT_FOLLOWLOCATION => 1,
+                CURLOPT_USERAGENT => 'Torrent Parser PHP'
             ]
         );
         $response = curl_exec($cu);
