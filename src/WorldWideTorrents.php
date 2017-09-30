@@ -2,6 +2,8 @@
 
 namespace pxgamer\TorrentParser;
 
+use Illuminate\Support\Collection;
+
 /**
  * Class WorldWideTorrents
  * @package pxgamer\TorrentParser
@@ -14,7 +16,7 @@ class WorldWideTorrents
      * Search for a specific query string
      *
      * @param string $search_query
-     * @return mixed
+     * @return Collection
      */
     public static function search($search_query)
     {
@@ -26,7 +28,7 @@ class WorldWideTorrents
     /**
      * Get the latest torrents
      *
-     * @return mixed
+     * @return Collection
      */
     public static function latest()
     {
@@ -37,7 +39,7 @@ class WorldWideTorrents
      * Search for torrents by a specific username
      *
      * @param string $username
-     * @return mixed
+     * @return Collection
      */
     public static function user($username)
     {
@@ -50,7 +52,7 @@ class WorldWideTorrents
      * Perform a GET request
      *
      * @param string $url
-     * @return mixed
+     * @return Collection
      */
     private static function get(string $url)
     {
@@ -63,11 +65,45 @@ class WorldWideTorrents
                 CURLOPT_SSL_VERIFYHOST => 0,
                 CURLOPT_RETURNTRANSFER => 1,
                 CURLOPT_FOLLOWLOCATION => 1,
-                CURLOPT_USERAGENT => 'Torrent Parser PHP'
+                CURLOPT_USERAGENT      => 'Torrent Parser PHP'
             ]
         );
         $response = curl_exec($cu);
+        $data = json_decode($response, true) ?? [];
+        return self::createCollection($data);
+    }
 
-        return json_decode($response, true);
+    /**
+     * Create a new Collection of Torrent instances
+     *
+     * @param array $responseData
+     * @return Collection
+     */
+    private static function createCollection($responseData)
+    {
+        $collection = new Collection();
+
+        foreach ($responseData as $element) {
+            $torrent = new Torrent();
+
+            $torrent->title = $element['title'] ?? null;
+            $torrent->hash = $element['info_hash'] ?? null;
+            $torrent->link = $element['link'] ?? null;
+            $torrent->category = $element['category'] ?? null;
+            $torrent->size = $element['size'] ?? null;
+            $torrent->date = $element['publish_date'] ?? null;
+
+            if ($torrent->size) {
+                $torrent->size = (int)$torrent->size;
+            }
+
+            if ($torrent->date) {
+                $torrent->date = new \DateTime($torrent->date);
+            }
+
+            $collection[] = $torrent;
+        }
+
+        return $collection;
     }
 }
