@@ -21,6 +21,6 @@ class RARBG
      */
     public static function latest()
     {
-        return self::get('/rssdd_magnet.php');
+        return self::get(self::BASE_URL . '/rssdd.php');
     }
 }

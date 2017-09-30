@@ -21,6 +21,6 @@ class EZTV
      */
     public static function latest()
     {
-        return self::get('/ezrss.xml');
+        return self::get(self::BASE_URL . '/ezrss.xml');
     }
 }
