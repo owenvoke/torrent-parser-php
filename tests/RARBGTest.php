@@ -14,6 +14,6 @@ class RARBGTest extends TestCase
     public function testRarbgLatest()
     {
         $response = RARBG::latest();
-        $this->assertTrue(is_array($response));
+        $this->assertTrue(is_a($response, \Illuminate\Support\Collection::class));
     }
 }
