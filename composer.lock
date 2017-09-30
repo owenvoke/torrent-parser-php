@@ -4,8 +4,56 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "66a67689a3e2b0ee4dc0bd7c92c8b6c7",
-    "packages": [],
+    "content-hash": "d07ddcf72b0831a6ce4deed1f285ee55",
+    "packages": [
+        {
+            "name": "tightenco/collect",
+            "version": "v5.5.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tightenco/collect.git",
+                "reference": "dae85b18c6a2315645bca3dac37e3e408542efa8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tightenco/collect/zipball/dae85b18c6a2315645bca3dac37e3e408542efa8",
+                "reference": "dae85b18c6a2315645bca3dac37e3e408542efa8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~1.0",
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/Illuminate/Support/helpers.php"
+                ],
+                "psr-4": {
+                    "Illuminate\\": "src/Illuminate"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "Collect - Illuminate Collections as a separate package.",
+            "keywords": [
+                "collection",
+                "laravel"
+            ],
+            "time": "2017-09-25T17:13:51+00:00"
+        }
+    ],
     "packages-dev": [
         {
             "name": "doctrine/instantiator",

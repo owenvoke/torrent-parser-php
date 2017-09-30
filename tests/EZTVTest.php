@@ -14,6 +14,6 @@ class EZTVTest extends TestCase
     public function testEztvLatest()
     {
         $response = EZTV::latest();
-        $this->assertTrue(is_array($response));
+        $this->assertTrue(is_a($response, \Illuminate\Support\Collection::class));
     }
 }

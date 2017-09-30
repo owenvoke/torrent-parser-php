@@ -32,4 +32,31 @@ trait Parser
 
         return $arr;
     }
+
+    /**
+     * Perform a GET request
+     *
+     * @param string $url
+     * @return mixed
+     */
+    private static function get(string $url)
+    {
+        $cu = curl_init();
+        curl_setopt_array(
+            $cu,
+            [
+                CURLOPT_URL => $url,
+                CURLOPT_SSL_VERIFYPEER => 0,
+                CURLOPT_SSL_VERIFYHOST => 0,
+                CURLOPT_RETURNTRANSFER => 1,
+                CURLOPT_FOLLOWLOCATION => 1,
+                CURLOPT_USERAGENT => 'Torrent Parser PHP'
+            ]
+        );
+        $response = curl_exec($cu);
+        $response = str_replace('&nbsp;', ' ', $response);
+        $xml = simplexml_load_string($response);
+
+        return self::xml2array($xml)['channel'][0]['item'];
+    }
 }
