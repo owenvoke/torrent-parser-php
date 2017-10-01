@@ -17,7 +17,7 @@ class LimeTorrents
     /**
      * Get the latest torrents
      *
-     * @return mixed
+     * @return Collection
      */
     public static function latest()
     {
