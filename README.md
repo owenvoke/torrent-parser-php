@@ -13,6 +13,7 @@ All parameters are returned as a [Collection](https://github.com/tightenco/colle
 - [WorldWide Torrents](src/WorldWideTorrents.php)
 - [RARBG](src/RARBG.php)
 - [EZTV](src/EZTV.php)
+- [LimeTorrents](src/LimeTorrents.php)
 
 ## Usage
 
@@ -68,4 +69,16 @@ _Latest_
 <?php
 use \pxgamer\TorrentParser;
 TorrentParser\EZTV::latest();
+```
+
+
+### LimeTorrents
+
+*__NOTE:__ LimeTorrents only supports the `::latest()` function.*
+
+_Latest_
+```php
+<?php
+use \pxgamer\TorrentParser;
+TorrentParser\LimeTorrents::latest();
 ```
