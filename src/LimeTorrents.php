@@ -6,13 +6,13 @@ use Illuminate\Support\Collection;
 use pxgamer\TorrentParser\Traits\Parser;
 
 /**
- * Class RARBG
+ * Class LimeTorrents
  */
-class RARBG
+class LimeTorrents
 {
     use Parser;
 
-    const BASE_URL = 'https://rarbg.to';
+    const BASE_URL = 'https://limetorrents.cc';
 
     /**
      * Get the latest torrents
@@ -21,7 +21,7 @@ class RARBG
      */
     public static function latest()
     {
-        $data = self::get(self::BASE_URL . '/rssdd.php');
+        $data = self::get(self::BASE_URL . '/rss/');
 
         return self::createCollection($data);
     }
@@ -41,7 +41,13 @@ class RARBG
 
             $torrent->title = $element['title'] ?? null;
             $torrent->link = $element['link'] ?? null;
+            $torrent->category = $element['category'] ?? null;
+            $torrent->size = $element['size'] ?? null;
             $torrent->date = $element['pubDate'] ?? null;
+
+            if ($torrent->size) {
+                $torrent->size = (int)$torrent->size;
+            }
 
             if ($torrent->date) {
                 $torrent->date = new \DateTime($torrent->date);

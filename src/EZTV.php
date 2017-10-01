@@ -7,7 +7,6 @@ use pxgamer\TorrentParser\Traits\Parser;
 
 /**
  * Class EZTV
- * @package pxgamer\TorrentParser
  */
 class EZTV
 {
