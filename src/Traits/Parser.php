@@ -4,7 +4,6 @@ namespace pxgamer\TorrentParser\Traits;
 
 /**
  * Trait Parser
- * @package pxgamer\TorrentParser\Traits
  */
 trait Parser
 {
@@ -45,12 +44,12 @@ trait Parser
         curl_setopt_array(
             $cu,
             [
-                CURLOPT_URL => $url,
+                CURLOPT_URL            => $url,
                 CURLOPT_SSL_VERIFYPEER => 0,
                 CURLOPT_SSL_VERIFYHOST => 0,
                 CURLOPT_RETURNTRANSFER => 1,
                 CURLOPT_FOLLOWLOCATION => 1,
-                CURLOPT_USERAGENT => 'Torrent Parser PHP'
+                CURLOPT_USERAGENT      => 'Torrent Parser PHP'
             ]
         );
         $response = curl_exec($cu);

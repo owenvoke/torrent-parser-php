@@ -7,7 +7,6 @@ use pxgamer\TorrentParser\Traits\Parser;
 
 /**
  * Class RARBG
- * @package pxgamer\TorrentParser
  */
 class RARBG
 {

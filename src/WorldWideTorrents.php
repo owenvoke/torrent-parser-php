@@ -6,7 +6,6 @@ use Illuminate\Support\Collection;
 
 /**
  * Class WorldWideTorrents
- * @package pxgamer\TorrentParser
  */
 class WorldWideTorrents
 {
