@@ -4,7 +4,7 @@ A collection of parsers for various torrent RSS/JSON feeds.
 
 [![Build Status](https://travis-ci.org/pxgamer/torrent-parser-php.svg?branch=master)](https://travis-ci.org/pxgamer/torrent-parser-php)
 [![Version](https://img.shields.io/packagist/v/pxgamer/torrent-parser-php.svg)](https://packagist.org/p/pxgamer/torrent-parser-php)
-[![License](https://img.shields.io/packagist/l/pxgamer/torrent-parser-php.svg)](https://opensource.org/licenses/mit-license)
+![License](https://img.shields.io/packagist/l/pxgamer/torrent-parser-php.svg)
 
 All parameters are returned as a [Collection](https://github.com/tightenco/collect) of [`Torrent`](src/Torrent.php) instances.
 
