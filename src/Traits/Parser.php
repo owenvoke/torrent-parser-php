@@ -45,8 +45,6 @@ trait Parser
             $cu,
             [
                 CURLOPT_URL            => $url,
-                CURLOPT_SSL_VERIFYPEER => 0,
-                CURLOPT_SSL_VERIFYHOST => 0,
                 CURLOPT_RETURNTRANSFER => 1,
                 CURLOPT_FOLLOWLOCATION => 1,
                 CURLOPT_USERAGENT      => 'Torrent Parser PHP'
