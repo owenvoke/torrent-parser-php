@@ -1,7 +1,9 @@
 <?php
 
+namespace pxgamer\TorrentParser;
+
+use Illuminate\Support\Collection;
 use PHPUnit\Framework\TestCase;
-use pxgamer\TorrentParser\WorldWideTorrents;
 
 /**
  * Class WorldWideTorrentsTest
@@ -14,7 +16,7 @@ class WorldWideTorrentsTest extends TestCase
     public function testWorldWideTorrentsSearch()
     {
         $response = WorldWideTorrents::search('Search');
-        $this->assertTrue(is_a($response, \Illuminate\Support\Collection::class));
+        $this->assertTrue(is_a($response, Collection::class));
     }
 
     /**
@@ -23,7 +25,7 @@ class WorldWideTorrentsTest extends TestCase
     public function testWorldWideTorrentsLatest()
     {
         $response = WorldWideTorrents::latest();
-        $this->assertTrue(is_a($response, \Illuminate\Support\Collection::class));
+        $this->assertTrue(is_a($response, Collection::class));
     }
 
     /**
@@ -32,6 +34,6 @@ class WorldWideTorrentsTest extends TestCase
     public function testWorldWideTorrentsUser()
     {
         $response = WorldWideTorrents::user('wasted');
-        $this->assertTrue(is_a($response, \Illuminate\Support\Collection::class));
+        $this->assertTrue(is_a($response, Collection::class));
     }
 }
