@@ -10,7 +10,7 @@ trait Parser
     /**
      * Convert a SimpleXMLElement to an array
      *
-     * @param \SimpleXMLElement $xml
+     * @param  \SimpleXMLElement $xml
      * @return array
      */
     private static function xml2array(\SimpleXMLElement $xml)
@@ -18,7 +18,9 @@ trait Parser
         $arr = [];
 
         if ($xml) {
-            /** @var \SimpleXMLIterator $r */
+            /**
+ * @var \SimpleXMLIterator $r 
+*/
             foreach ($xml->children() as $r) {
                 $t = [];
                 if (!is_null($r) && count($r->children()) == 0) {
@@ -35,7 +37,7 @@ trait Parser
     /**
      * Perform a GET request
      *
-     * @param string $url
+     * @param  string $url
      * @return mixed
      */
     private static function get(string $url)
