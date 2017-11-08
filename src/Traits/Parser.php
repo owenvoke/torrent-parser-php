@@ -18,9 +18,6 @@ trait Parser
         $arr = [];
 
         if ($xml) {
-            /**
- * @var \SimpleXMLIterator $r 
-*/
             foreach ($xml->children() as $r) {
                 $t = [];
                 if (!is_null($r) && count($r->children()) == 0) {
@@ -49,7 +46,7 @@ trait Parser
                 CURLOPT_URL            => $url,
                 CURLOPT_RETURNTRANSFER => 1,
                 CURLOPT_FOLLOWLOCATION => 1,
-                CURLOPT_USERAGENT      => 'Torrent Parser PHP'
+                CURLOPT_USERAGENT      => 'Torrent Parser PHP',
             ]
         );
         $response = curl_exec($cu);
