@@ -14,7 +14,7 @@ class WorldWideTorrents
     /**
      * Search for a specific query string
      *
-     * @param string $search_query
+     * @param  string $search_query
      * @return Collection
      */
     public static function search($search_query)
@@ -37,7 +37,7 @@ class WorldWideTorrents
     /**
      * Search for torrents by a specific username
      *
-     * @param string $username
+     * @param  string $username
      * @return Collection
      */
     public static function user($username)
@@ -50,7 +50,7 @@ class WorldWideTorrents
     /**
      * Perform a GET request
      *
-     * @param string $url
+     * @param  string $url
      * @return Collection
      */
     private static function get(string $url)
@@ -73,7 +73,7 @@ class WorldWideTorrents
     /**
      * Create a new Collection of Torrent instances
      *
-     * @param array $responseData
+     * @param  array $responseData
      * @return Collection
      */
     private static function createCollection($responseData)

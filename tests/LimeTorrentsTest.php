@@ -1,7 +1,9 @@
 <?php
 
+namespace pxgamer\TorrentParser;
+
+use Illuminate\Support\Collection;
 use PHPUnit\Framework\TestCase;
-use pxgamer\TorrentParser\LimeTorrents;
 
 /**
  * Class LimeTorrentsTest
@@ -14,6 +16,6 @@ class LimeTorrentsTest extends TestCase
     public function testLimeTorrentsLatest()
     {
         $response = LimeTorrents::latest();
-        $this->assertTrue(is_a($response, \Illuminate\Support\Collection::class));
+        $this->assertTrue(is_a($response, Collection::class));
     }
 }

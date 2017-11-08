@@ -10,7 +10,7 @@ trait Parser
     /**
      * Convert a SimpleXMLElement to an array
      *
-     * @param \SimpleXMLElement $xml
+     * @param  \SimpleXMLElement $xml
      * @return array
      */
     private static function xml2array(\SimpleXMLElement $xml)
@@ -18,7 +18,6 @@ trait Parser
         $arr = [];
 
         if ($xml) {
-            /** @var \SimpleXMLIterator $r */
             foreach ($xml->children() as $r) {
                 $t = [];
                 if (!is_null($r) && count($r->children()) == 0) {
@@ -35,7 +34,7 @@ trait Parser
     /**
      * Perform a GET request
      *
-     * @param string $url
+     * @param  string $url
      * @return mixed
      */
     private static function get(string $url)
@@ -47,7 +46,7 @@ trait Parser
                 CURLOPT_URL            => $url,
                 CURLOPT_RETURNTRANSFER => 1,
                 CURLOPT_FOLLOWLOCATION => 1,
-                CURLOPT_USERAGENT      => 'Torrent Parser PHP'
+                CURLOPT_USERAGENT      => 'Torrent Parser PHP',
             ]
         );
         $response = curl_exec($cu);

@@ -1,7 +1,9 @@
 <?php
 
+namespace pxgamer\TorrentParser;
+
+use Illuminate\Support\Collection;
 use PHPUnit\Framework\TestCase;
-use pxgamer\TorrentParser\RARBG;
 
 /**
  * Class RARBGTest
@@ -14,6 +16,6 @@ class RARBGTest extends TestCase
     public function testRarbgLatest()
     {
         $response = RARBG::latest();
-        $this->assertTrue(is_a($response, \Illuminate\Support\Collection::class));
+        $this->assertTrue(is_a($response, Collection::class));
     }
 }

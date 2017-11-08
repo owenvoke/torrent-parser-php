@@ -29,7 +29,7 @@ class LimeTorrents
     /**
      * Create a new Collection of Torrent instances
      *
-     * @param array $responseData
+     * @param  array $responseData
      * @return Collection
      */
     private static function createCollection($responseData)
