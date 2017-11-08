@@ -29,7 +29,7 @@ $ composer require pxgamer/torrent-parser-php
 
 All parameters are returned as a [Collection](https://github.com/tightenco/collect) of [`Torrent`](src/Torrent.php) instances.
 
-## Currently Supported Feeds
+### Currently Supported Feeds
 
 - [WorldWide Torrents](src/WorldWideTorrents.php)
 - [RARBG](src/RARBG.php)
@@ -77,7 +77,6 @@ _Latest_
 use \pxgamer\TorrentParser;
 TorrentParser\EZTV::latest();
 ```
-
 
 #### LimeTorrents
 
