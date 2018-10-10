@@ -9,14 +9,6 @@
 
 A collection of parsers for various torrent RSS/JSON feeds.
 
-## Structure
-
-```
-src/
-tests/
-vendor/
-```
-
 ## Install
 
 Via Composer
