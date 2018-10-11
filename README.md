@@ -13,7 +13,7 @@ A collection of parsers for various torrent RSS/JSON feeds.
 
 Via Composer
 
-``` bash
+```bash
 $ composer require pxgamer/torrent-parser-php
 ```
 
