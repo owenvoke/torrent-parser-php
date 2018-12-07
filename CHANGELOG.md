@@ -6,6 +6,8 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) princip
 
 ## [Unreleased]
 
+## [v4.0.5] - 2018-12-07
+
 ### Changed
 - Fix the EZTV base uri ([47e03e4](https://github.com/pxgamer/torrent-parser-php/commit/47e03e499267139241bf0126132cdc944e60925e))
 
@@ -44,3 +46,4 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) princip
 - PSR-4 loading of tests
 
 [Unreleased]: https://github.com/pxgamer/torrent-parser-php/compare/master...develop
+[v4.0.5]: https://github.com/pxgamer/torrent-parser-php/compare/v4.0.4...v4.0.5
