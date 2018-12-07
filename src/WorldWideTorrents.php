@@ -9,7 +9,7 @@ use Illuminate\Support\Collection;
  */
 class WorldWideTorrents
 {
-    const BASE_URL = 'https://worldwidetorrents.me';
+    const BASE_URL = 'https://worldwidetorrents.to';
 
     /**
      * Search for a specific query string
