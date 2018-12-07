@@ -12,7 +12,7 @@ class EZTV
 {
     use Parser;
 
-    const BASE_URL = 'https://eztv.ag';
+    const BASE_URL = 'https://eztv.io';
 
     /**
      * Get the latest torrents
