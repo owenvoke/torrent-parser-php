@@ -4,6 +4,11 @@ All notable changes to `torrent-parser-php` will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) principles.
 
+## v4.0.4 - 2018-12-07
+
+### Changed
+- Fix the WorldWideTorrents base uri ([7e8738a](https://github.com/pxgamer/torrent-parser-php/commit/7e8738abc1d380537ad65da956cfb4017b481666))
+
 ## v4.0.3 - 2018-10-11
 
 ### Added
