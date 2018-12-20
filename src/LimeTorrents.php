@@ -32,7 +32,7 @@ class LimeTorrents
      * @param  array $responseData
      * @return Collection
      */
-    private static function createCollection($responseData): Collection
+    private static function createCollection(array $responseData): Collection
     {
         $collection = new Collection();
 

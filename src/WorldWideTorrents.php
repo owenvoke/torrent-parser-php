@@ -14,14 +14,14 @@ class WorldWideTorrents
     /**
      * Search for a specific query string
      *
-     * @param  string $search_query
+     * @param  string $query
      * @return Collection
      */
-    public static function search($search_query): Collection
+    public static function search(string $query): Collection
     {
-        $search_query = urlencode($search_query);
+        $query = urlencode($query);
 
-        return self::get(self::BASE_URL . '/json.php?dllink=1&q=' . $search_query);
+        return self::get(self::BASE_URL . '/json.php?dllink=1&q=' . $query);
     }
 
     /**
@@ -40,7 +40,7 @@ class WorldWideTorrents
      * @param  string $username
      * @return Collection
      */
-    public static function user($username): Collection
+    public static function user(string $username): Collection
     {
         $username = urlencode($username);
 
@@ -76,7 +76,7 @@ class WorldWideTorrents
      * @param  array $responseData
      * @return Collection
      */
-    private static function createCollection($responseData): Collection
+    private static function createCollection(array $responseData): Collection
     {
         $collection = new Collection();
 
