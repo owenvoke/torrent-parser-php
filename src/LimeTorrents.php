@@ -12,7 +12,7 @@ class LimeTorrents
 {
     use Parser;
 
-    const BASE_URL = 'https://limetorrents.info';
+    public const BASE_URL = 'https://limetorrents.info';
 
     /**
      * Get the latest torrents

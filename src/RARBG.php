@@ -12,7 +12,7 @@ class RARBG
 {
     use Parser;
 
-    const BASE_URL = 'https://rarbg.to';
+    public const BASE_URL = 'https://rarbg.to';
 
     /**
      * Get the latest torrents
