@@ -12,8 +12,9 @@ class LimeTorrentsTest extends TestCase
 {
     /**
      * Test for collecting the latest torrents from LimeTorrents
+     * @test
      */
-    public function testLimeTorrentsLatest()
+    public function limeTorrentsLatest(): void
     {
         $response = LimeTorrents::latest();
         $this->assertInstanceOf(Collection::class, $response);

@@ -12,8 +12,9 @@ class WorldWideTorrentsTest extends TestCase
 {
     /**
      * Test for collecting search results from WorldWideTorrents
+     * @test
      */
-    public function testWorldWideTorrentsSearch()
+    public function worldWideTorrentsSearch(): void
     {
         $response = WorldWideTorrents::search('Search');
         $this->assertInstanceOf(Collection::class, $response);
@@ -21,8 +22,9 @@ class WorldWideTorrentsTest extends TestCase
 
     /**
      * Test for collecting the latest torrents from WorldWideTorrents
+     * @test
      */
-    public function testWorldWideTorrentsLatest()
+    public function worldWideTorrentsLatest(): void
     {
         $response = WorldWideTorrents::latest();
         $this->assertInstanceOf(Collection::class, $response);
@@ -30,8 +32,9 @@ class WorldWideTorrentsTest extends TestCase
 
     /**
      * Test for collecting a user's torrents from WorldWideTorrents
+     * @test
      */
-    public function testWorldWideTorrentsUser()
+    public function worldWideTorrentsUser(): void
     {
         $response = WorldWideTorrents::user('wasted');
         $this->assertInstanceOf(Collection::class, $response);

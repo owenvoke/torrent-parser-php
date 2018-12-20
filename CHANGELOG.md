@@ -6,6 +6,9 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com) princip
 
 ## [Unreleased]
 
+### Removed
+- Remove support for PHPUnit 6 ([32c47d40](https://github.com/pxgamer/torrent-parser-php/commit/32c47d4003588a9f7cc81dffe4246678256d796f))
+
 ## [v4.0.5] - 2018-12-07
 
 ### Changed
