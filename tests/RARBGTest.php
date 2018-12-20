@@ -14,7 +14,7 @@ class RARBGTest extends TestCase
      * Test for collecting the latest torrents from RARBG
      * @test
      */
-    public function rarbgLatest()
+    public function rarbgLatest(): void
     {
         $response = RARBG::latest();
         $this->assertInstanceOf(Collection::class, $response);
