@@ -36,7 +36,7 @@ class WorldWideTorrentsTest extends TestCase
      */
     public function worldWideTorrentsUser(): void
     {
-        $response = WorldWideTorrents::user('wasted');
+        $response = WorldWideTorrents::user('pxgamer');
         $this->assertInstanceOf(Collection::class, $response);
     }
 }
