@@ -13,7 +13,7 @@ trait Parser
      * @param  \SimpleXMLElement $xml
      * @return array
      */
-    private static function xml2array(\SimpleXMLElement $xml)
+    private static function xml2array(\SimpleXMLElement $xml): array
     {
         $arr = [];
 
@@ -43,10 +43,10 @@ trait Parser
         curl_setopt_array(
             $cu,
             [
-                CURLOPT_URL            => $url,
+                CURLOPT_URL => $url,
                 CURLOPT_RETURNTRANSFER => 1,
                 CURLOPT_FOLLOWLOCATION => 1,
-                CURLOPT_USERAGENT      => 'Torrent Parser PHP',
+                CURLOPT_USERAGENT => 'Torrent Parser PHP',
             ]
         );
         $response = curl_exec($cu);
