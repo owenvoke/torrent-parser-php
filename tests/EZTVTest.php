@@ -16,6 +16,6 @@ class EZTVTest extends TestCase
     public function testEztvLatest()
     {
         $response = EZTV::latest();
-        $this->assertTrue(is_a($response, Collection::class));
+        $this->assertInstanceOf(Collection::class, $response);
     }
 }

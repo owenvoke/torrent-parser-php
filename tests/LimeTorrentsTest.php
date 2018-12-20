@@ -16,6 +16,6 @@ class LimeTorrentsTest extends TestCase
     public function testLimeTorrentsLatest()
     {
         $response = LimeTorrents::latest();
-        $this->assertTrue(is_a($response, Collection::class));
+        $this->assertInstanceOf(Collection::class, $response);
     }
 }
