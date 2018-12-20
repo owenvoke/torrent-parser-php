@@ -16,7 +16,7 @@ class WorldWideTorrentsTest extends TestCase
     public function testWorldWideTorrentsSearch()
     {
         $response = WorldWideTorrents::search('Search');
-        $this->assertTrue(is_a($response, Collection::class));
+        $this->assertInstanceOf(Collection::class, $response);
     }
 
     /**
@@ -25,7 +25,7 @@ class WorldWideTorrentsTest extends TestCase
     public function testWorldWideTorrentsLatest()
     {
         $response = WorldWideTorrents::latest();
-        $this->assertTrue(is_a($response, Collection::class));
+        $this->assertInstanceOf(Collection::class, $response);
     }
 
     /**
@@ -34,6 +34,6 @@ class WorldWideTorrentsTest extends TestCase
     public function testWorldWideTorrentsUser()
     {
         $response = WorldWideTorrents::user('wasted');
-        $this->assertTrue(is_a($response, Collection::class));
+        $this->assertInstanceOf(Collection::class, $response);
     }
 }
