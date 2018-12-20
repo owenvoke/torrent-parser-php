@@ -19,7 +19,7 @@ class RARBG
      *
      * @return Collection
      */
-    public static function latest()
+    public static function latest(): Collection
     {
         $data = self::get(self::BASE_URL . '/rssdd.php');
 
@@ -32,7 +32,7 @@ class RARBG
      * @param  array $responseData
      * @return Collection
      */
-    private static function createCollection($responseData)
+    private static function createCollection($responseData): Collection
     {
         $collection = new Collection();
 

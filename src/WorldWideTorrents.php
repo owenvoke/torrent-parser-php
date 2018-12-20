@@ -17,7 +17,7 @@ class WorldWideTorrents
      * @param  string $search_query
      * @return Collection
      */
-    public static function search($search_query)
+    public static function search($search_query): Collection
     {
         $search_query = urlencode($search_query);
 
@@ -29,7 +29,7 @@ class WorldWideTorrents
      *
      * @return Collection
      */
-    public static function latest()
+    public static function latest(): Collection
     {
         return self::get(self::BASE_URL . '/json.php');
     }
@@ -40,7 +40,7 @@ class WorldWideTorrents
      * @param  string $username
      * @return Collection
      */
-    public static function user($username)
+    public static function user($username): Collection
     {
         $username = urlencode($username);
 
@@ -53,7 +53,7 @@ class WorldWideTorrents
      * @param  string $url
      * @return Collection
      */
-    private static function get(string $url)
+    private static function get(string $url): Collection
     {
         $cu = curl_init();
         curl_setopt_array(
@@ -76,7 +76,7 @@ class WorldWideTorrents
      * @param  array $responseData
      * @return Collection
      */
-    private static function createCollection($responseData)
+    private static function createCollection($responseData): Collection
     {
         $collection = new Collection();
 
